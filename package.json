@@ -6,10 +6,13 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
+    "check:links": "node scripts/check-links.mjs",
     "preview": "astro preview"
   },
   "dependencies": {
     "@astrojs/mdx": "^6.0.3",
+    "@astrojs/rss": "^4.0.18",
+    "@astrojs/sitemap": "^3.7.3",
     "astro": "^6.4.8",
     "katex": "^0.17.0",
     "rehype-katex": "^7.0.1",
