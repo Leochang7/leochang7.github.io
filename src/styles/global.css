@@ -152,6 +152,90 @@ h1 {
   color: var(--muted);
 }
 
+.prose h2,
+.prose h3 {
+  margin-top: 2.2em;
+  line-height: 1.2;
+}
+
+.prose h2 {
+  font-size: 1.7rem;
+}
+
+.prose h3 {
+  font-size: 1.25rem;
+}
+
+.prose a {
+  color: var(--accent-dark);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}
+
+.prose blockquote {
+  margin: 28px 0;
+  border-left: 4px solid var(--accent);
+  padding: 2px 0 2px 20px;
+  color: var(--muted);
+}
+
+.prose pre {
+  overflow-x: auto;
+  border: 1px solid #2c332e;
+  padding: 18px;
+  background: #101511;
+  color: #f3efe6;
+  font-size: 0.92rem;
+  line-height: 1.7;
+}
+
+.prose code {
+  font-family: "Cascadia Code", "Fira Code", Consolas, monospace;
+  font-size: 0.92em;
+}
+
+.prose :not(pre) > code {
+  border: 1px solid var(--line);
+  padding: 0.12em 0.35em;
+  background: rgba(178, 64, 40, 0.08);
+  color: var(--accent-dark);
+}
+
+.prose table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 28px 0;
+  font-size: 0.95rem;
+}
+
+.prose th,
+.prose td {
+  border-bottom: 1px solid var(--line);
+  padding: 10px 12px;
+  text-align: left;
+}
+
+.prose th {
+  color: var(--ink);
+}
+
+.note-box {
+  margin: 28px 0;
+  border: 1px solid var(--line);
+  border-left: 5px solid var(--accent);
+  padding: 18px 20px;
+  background: rgba(255, 253, 248, 0.78);
+}
+
+.note-box strong {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.note-box p {
+  margin: 0;
+}
+
 .post-header {
   max-width: 760px;
   margin-bottom: 48px;
