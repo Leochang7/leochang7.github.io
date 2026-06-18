@@ -180,6 +180,11 @@ h1 {
   text-decoration: none;
 }
 
+.post-list {
+  max-width: 760px;
+  margin-top: 40px;
+}
+
 .post-card span {
   color: var(--accent);
   font-size: 0.85rem;
@@ -187,6 +192,51 @@ h1 {
 
 .post-card h2 {
   margin: 8px 0;
+}
+
+.post-card p {
+  margin: 0 0 14px;
+  color: var(--muted);
+}
+
+.post-shell {
+  display: grid;
+  grid-template-columns: minmax(0, 760px) 220px;
+  gap: 48px;
+  align-items: start;
+}
+
+.toc {
+  position: sticky;
+  top: 24px;
+  grid-column: 2;
+  grid-row: 1;
+  border-left: 1px solid var(--line);
+  padding-left: 18px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.toc p {
+  margin: 0 0 12px;
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.toc ol {
+  display: grid;
+  gap: 8px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.toc a {
+  text-decoration: none;
+}
+
+.toc .depth-3 {
+  padding-left: 14px;
 }
 
 .pdf-viewer iframe {
@@ -216,5 +266,14 @@ h1 {
 
   h1 {
     font-size: clamp(2.7rem, 18vw, 4.6rem);
+  }
+
+  .post-shell {
+    display: block;
+  }
+
+  .toc {
+    position: static;
+    margin-bottom: 32px;
   }
 }

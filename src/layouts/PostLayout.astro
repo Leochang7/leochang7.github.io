@@ -6,6 +6,7 @@ const {
   description = "",
   date,
   tags = [],
+  headings = [],
 } = Astro.props;
 ---
 
@@ -22,8 +23,24 @@ const {
           </ul>
         )}
       </header>
-      <div class="prose">
-        <slot />
+      <div class="post-shell">
+        {headings.length > 1 && (
+          <aside class="toc" aria-label="文章目录">
+            <p>目录</p>
+            <ol>
+              {headings
+                .filter((heading) => heading.depth <= 3)
+                .map((heading) => (
+                  <li class={`depth-${heading.depth}`}>
+                    <a href={`#${heading.slug}`}>{heading.text}</a>
+                  </li>
+                ))}
+            </ol>
+          </aside>
+        )}
+        <div class="prose">
+          <slot />
+        </div>
       </div>
     </article>
   </main>
