@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="420" viewBox="0 0 960 420" role="img" aria-labelledby="title desc">
+  <title id="title">XMind export placeholder</title>
+  <desc id="desc">A static SVG example showing how exported mind map assets can be displayed in posts.</desc>
+  <rect width="960" height="420" fill="#fffdf8"/>
+  <rect x="48" y="48" width="864" height="324" fill="#f7f4ee" stroke="#d8d0c3"/>
+  <circle cx="480" cy="210" r="56" fill="#1e2520"/>
+  <text x="480" y="217" text-anchor="middle" font-family="Georgia, serif" font-size="24" fill="#fffdf8">Blog</text>
+  <g fill="none" stroke="#b24028" stroke-width="3">
+    <path d="M424 210 C320 110 250 110 172 126"/>
+    <path d="M424 210 C320 310 250 310 172 294"/>
+    <path d="M536 210 C640 110 710 110 788 126"/>
+    <path d="M536 210 C640 310 710 310 788 294"/>
+  </g>
+  <g font-family="Georgia, serif" font-size="22" fill="#1e2520">
+    <text x="120" y="132">Markdown</text>
+    <text x="126" y="300">LaTeX</text>
+    <text x="760" y="132">PDF</text>
+    <text x="738" y="300">Diagrams</text>
+  </g>
+</svg>
