@@ -1,0 +1,10 @@
+---
+const { file, title = "PDF 预览" } = Astro.props;
+---
+
+<figure class="pdf-viewer">
+  <iframe src={file} title={title} loading="lazy"></iframe>
+  <figcaption>
+    <a href={file} target="_blank" rel="noreferrer">打开 PDF</a>
+  </figcaption>
+</figure>

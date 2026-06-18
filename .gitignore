@@ -1,0 +1,5 @@
+docs/
+AGENTS.MD
+node_modules/
+dist/
+.astro/
