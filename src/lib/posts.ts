@@ -24,3 +24,20 @@ export async function getPublishedPosts() {
     }))
     .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
 }
+
+export async function getTagGroups() {
+  const posts = await getPublishedPosts();
+  const groups = new Map<string, BlogPost[]>();
+
+  posts.forEach((post) => {
+    post.data.tags.forEach((tag) => {
+      const list = groups.get(tag) ?? [];
+      list.push(post);
+      groups.set(tag, list);
+    });
+  });
+
+  return Array.from(groups.entries())
+    .map(([tag, taggedPosts]) => ({ tag, posts: taggedPosts }))
+    .sort((a, b) => a.tag.localeCompare(b.tag, "zh-CN"));
+}

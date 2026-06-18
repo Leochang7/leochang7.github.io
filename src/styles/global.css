@@ -11,6 +11,18 @@
   font-family: Georgia, "Times New Roman", "Noto Serif SC", serif;
 }
 
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #101511;
+  --surface: #171d18;
+  --ink: #f3efe6;
+  --muted: #a6b0a7;
+  --line: #30382f;
+  --accent: #e27d60;
+  --accent-dark: #ffb19d;
+  --shadow: 0 24px 70px rgba(0, 0, 0, 0.28);
+}
+
 * {
   box-sizing: border-box;
 }
@@ -39,7 +51,8 @@ a {
 .site-header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
+  gap: 24px;
   padding: 24px 0;
 }
 
@@ -52,6 +65,9 @@ a {
 
 nav {
   display: flex;
+  flex: 1;
+  justify-content: flex-end;
+  flex-wrap: wrap;
   gap: 18px;
 }
 
@@ -63,6 +79,16 @@ nav a {
 
 nav a:hover {
   color: var(--accent);
+}
+
+.theme-toggle {
+  width: 38px;
+  height: 38px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  color: var(--ink);
+  background: var(--surface);
+  cursor: pointer;
 }
 
 .home,
@@ -236,6 +262,13 @@ h1 {
   margin: 0;
 }
 
+.prose img {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid var(--line);
+  background: var(--surface);
+}
+
 .post-header {
   max-width: 760px;
   margin-bottom: 48px;
@@ -281,6 +314,63 @@ h1 {
 .post-card p {
   margin: 0 0 14px;
   color: var(--muted);
+}
+
+.tag-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  max-width: 760px;
+  margin-top: 40px;
+}
+
+.tag-cloud a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid var(--line);
+  padding: 10px 14px;
+  background: color-mix(in srgb, var(--surface) 86%, transparent);
+  text-decoration: none;
+}
+
+.tag-cloud strong {
+  color: var(--accent);
+}
+
+.archive-list {
+  max-width: 760px;
+  margin-top: 44px;
+}
+
+.archive-list h2 {
+  margin: 36px 0 14px;
+  font-size: 2rem;
+}
+
+.archive-list ol {
+  display: grid;
+  gap: 14px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.archive-list li {
+  display: grid;
+  grid-template-columns: 130px minmax(0, 1fr);
+  gap: 16px;
+  border-top: 1px solid var(--line);
+  padding-top: 14px;
+}
+
+.archive-list time {
+  color: var(--muted);
+}
+
+.archive-list a {
+  color: var(--ink);
+  text-decoration: none;
 }
 
 .post-shell {
@@ -389,6 +479,10 @@ h1 {
     gap: 14px;
   }
 
+  nav {
+    justify-content: flex-start;
+  }
+
   .intro {
     padding: 32px 24px;
   }
@@ -404,5 +498,14 @@ h1 {
   .toc {
     position: static;
     margin-bottom: 32px;
+  }
+
+  .archive-list li {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+
+  .pdf-viewer iframe {
+    min-height: 62vh;
   }
 }

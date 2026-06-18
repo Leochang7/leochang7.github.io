@@ -1,0 +1,24 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getTagGroups } from "../../lib/posts";
+
+const tags = await getTagGroups();
+---
+
+<BaseLayout title="标签" description="按标签浏览文章。">
+  <main class="page">
+    <section class="prose">
+      <h1>标签</h1>
+      <p>按主题浏览文章、笔记和资料。</p>
+    </section>
+
+    <section class="tag-cloud" aria-label="标签列表">
+      {tags.map(({ tag, posts }) => (
+        <a href={`/tags/${encodeURIComponent(tag)}/`}>
+          <span>{tag}</span>
+          <strong>{posts.length}</strong>
+        </a>
+      ))}
+    </section>
+  </main>
+</BaseLayout>
