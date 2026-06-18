@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import PostCard from "../../components/PostCard.astro";
-import { formatDate, getTagGroups } from "../../lib/posts";
+import ArticleList from "../../themes/academic-minimal/components/ArticleList.astro";
+import { getTagGroups } from "../../lib/posts";
 
 export async function getStaticPaths() {
   const tags = await getTagGroups();
@@ -23,16 +23,6 @@ const { tag, posts } = Astro.props;
       <p>共 {posts.length} 篇文章。</p>
     </section>
 
-    <section class="post-list" aria-label="文章列表">
-      {posts.map((post) => (
-        <PostCard
-          title={post.data.title}
-          description={post.data.description}
-          href={`/blog/${post.slug}/`}
-          date={formatDate(post.data.date)}
-          tags={post.data.tags}
-        />
-      ))}
-    </section>
+    <ArticleList posts={posts} />
   </main>
 </BaseLayout>

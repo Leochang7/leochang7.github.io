@@ -1,0 +1,41 @@
+---
+const { posts = [], showSearch = false } = Astro.props;
+const groups = posts.reduce((acc, post) => {
+  const year = String(post.data.date.getFullYear());
+  acc[year] = acc[year] ?? [];
+  acc[year].push(post);
+  return acc;
+}, {});
+
+function formatListDate(date: Date) {
+  return `${date.getMonth() + 1} 月/${String(date.getDate()).padStart(2, "0")}`;
+}
+---
+
+{showSearch && (
+  <form class="search-form" role="search">
+    <input type="search" placeholder="搜索" aria-label="搜索文章" />
+    <button type="submit" aria-label="搜索">⌕</button>
+  </form>
+)}
+
+<section class="article-years" aria-label="文章列表">
+  {Object.entries(groups).map(([year, yearPosts]) => (
+    <section class="article-year">
+      <h2>欢迎来到{year} ({yearPosts.length})</h2>
+      <ul>
+        {yearPosts.map((post) => (
+          <li>
+            <span class="article-date">{formatListDate(post.data.date)}</span>
+            <a href={`/blog/${post.slug}/`}>{post.data.title}</a>
+            {post.data.tags.length > 0 && (
+              <span class="article-tags">
+                （{post.data.tags.join("，")}）
+              </span>
+            )}
+          </li>
+        ))}
+      </ul>
+    </section>
+  ))}
+</section>

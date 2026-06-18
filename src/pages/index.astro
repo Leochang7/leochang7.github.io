@@ -1,19 +1,10 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import HomeQuote from "../themes/academic-minimal/components/HomeQuote.astro";
 ---
 
 <BaseLayout title="我的个人网站" description="Leo Chang 的个人博客和知识记录。">
   <main class="home">
-    <section class="intro" aria-labelledby="home-title">
-      <p class="eyebrow">Personal Blog</p>
-      <h1 id="home-title">你好，世界！</h1>
-      <p class="lead">
-        欢迎来到我的第一个个人网站。这里是使用 GitHub Pages 搭建的，后续会升级为支持 Markdown、LaTeX、PDF 和图表的个人博客。
-      </p>
-      <div class="actions">
-        <a href="/blog/">查看博客</a>
-        <a href="/about/">关于我</a>
-      </div>
-    </section>
+    <HomeQuote />
   </main>
 </BaseLayout>

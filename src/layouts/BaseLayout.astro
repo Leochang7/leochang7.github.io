@@ -1,8 +1,8 @@
 ---
-import "../styles/global.css";
+import "../themes/academic-minimal/theme.css";
 import "katex/dist/katex.min.css";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
+import ThemeHeader from "../themes/academic-minimal/components/ThemeHeader.astro";
+import ThemeFooter from "../themes/academic-minimal/components/ThemeFooter.astro";
 
 const {
   title = "Leo Chang",
@@ -35,8 +35,8 @@ const imageUrl = new URL(image, Astro.site);
     <title>{pageTitle}</title>
   </head>
   <body>
-    <Header />
+    <ThemeHeader />
     <slot />
-    <Footer />
+    <ThemeFooter />
   </body>
 </html>

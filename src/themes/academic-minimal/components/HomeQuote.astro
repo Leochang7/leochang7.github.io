@@ -1,0 +1,10 @@
+---
+import { themeConfig } from "../config";
+---
+
+<section class="home-quote" aria-label="首页引言">
+  <blockquote>
+    {themeConfig.homeQuote.lines.map((line) => <p>“{line}”</p>)}
+  </blockquote>
+  <p class="quote-source">—— {themeConfig.homeQuote.source}</p>
+</section>

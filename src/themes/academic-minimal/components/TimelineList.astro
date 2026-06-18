@@ -1,0 +1,15 @@
+---
+const { items = [] } = Astro.props;
+---
+
+<section class="timeline-list" aria-label="历程列表">
+  {items.map((item) => (
+    <article>
+      <h2>{item.date} {item.title}</h2>
+      {item.body && <p>{item.body}</p>}
+      {item.code && (
+        <pre><code>{item.code}</code></pre>
+      )}
+    </article>
+  ))}
+</section>
