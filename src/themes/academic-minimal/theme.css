@@ -2,12 +2,12 @@
   color-scheme: light;
   --bg: #fff;
   --ink: #000;
-  --muted: #666;
+  --muted: #444;
   --line: #cfcfcf;
   --link: #06c;
   --code-bg: #151515;
   --code-ink: #f4f4f4;
-  font-family: "Times New Roman", "Noto Serif SC", SimSun, serif;
+  font-family: Arial, "Microsoft YaHei", "Noto Sans SC", sans-serif;
 }
 
 * {
@@ -22,8 +22,8 @@ body {
   margin: 0;
   color: var(--ink);
   background: var(--bg);
-  font-size: 17px;
-  line-height: 1.75;
+  font-size: 16px;
+  line-height: 1.8;
 }
 
 a {
@@ -33,21 +33,20 @@ a {
 }
 
 .site-header {
-  max-width: 980px;
+  max-width: 1180px;
   margin: 0 auto;
-  padding: 64px 24px 82px;
+  padding: 58px 24px 96px;
 }
 
 .site-nav {
   display: flex;
   justify-content: center;
-  gap: 28px;
+  gap: 26px;
   flex-wrap: wrap;
 }
 
 .site-nav a {
   color: var(--ink);
-  font-family: Arial, "Noto Sans SC", sans-serif;
   font-size: 16px;
   text-decoration: none;
 }
@@ -57,40 +56,43 @@ a {
 }
 
 .site-footer {
-  max-width: 980px;
-  margin: 80px auto 0;
+  max-width: 1180px;
+  margin: 72px auto 0;
   padding: 24px;
   color: var(--muted);
-  font-size: 14px;
+  font-size: 13px;
   text-align: center;
 }
 
 .home,
 .page {
-  max-width: 980px;
+  max-width: 1180px;
   margin: 0 auto;
   padding: 0 24px 80px;
 }
 
 .home {
-  min-height: 420px;
+  min-height: 440px;
   display: grid;
   place-items: start center;
-  padding-top: 56px;
+  padding-top: 28px;
 }
 
 .home-quote {
-  width: min(860px, 100%);
+  width: min(860px, calc(100% - 120px));
   border: 1px solid var(--ink);
-  border-radius: 20px;
-  padding: 14px 40px 12px;
+  border-radius: 18px;
+  padding: 12px 40px 11px;
   text-align: center;
 }
 
 .home-quote blockquote {
   margin: 0;
-  color: var(--muted);
+  color: #777;
+  font-family: "KaiTi", "STKaiti", serif;
   font-style: italic;
+  font-size: 14px;
+  line-height: 1.55;
 }
 
 .home-quote p {
@@ -98,41 +100,44 @@ a {
 }
 
 .quote-source {
-  margin: 22px 0 0;
-  color: var(--muted);
-  font-size: 14px;
+  margin: 20px 0 0;
+  color: #777;
+  font-size: 13px;
 }
 
-.page > .prose:first-child {
+.page::before {
+  content: "";
+  display: block;
+  width: 840px;
+  max-width: 100%;
   border-top: 1px solid var(--line);
-  padding-top: 56px;
+  margin: 0 0 56px 50px;
 }
 
 .prose,
-.post,
 .article-years,
 .timeline-list,
 .paper-list,
 .archive-list,
 .tag-cloud {
   max-width: 840px;
+  margin-left: 50px;
 }
 
 h1,
 h2,
 h3 {
-  font-family: Arial, "Noto Sans SC", sans-serif;
   line-height: 1.35;
 }
 
 h1 {
   margin: 0 0 28px;
-  font-size: 28px;
+  font-size: 24px;
 }
 
 h2 {
   margin: 42px 0 18px;
-  font-size: 22px;
+  font-size: 24px;
 }
 
 h3 {
@@ -179,12 +184,12 @@ h3 {
   overflow-x: auto;
   border: 4px solid #555;
   border-radius: 6px;
-  padding: 22px 26px;
+  padding: 20px 26px;
   background: var(--code-bg);
   color: var(--code-ink);
   font-family: Consolas, "Cascadia Code", monospace;
-  font-size: 15px;
-  line-height: 1.65;
+  font-size: 14px;
+  line-height: 1.7;
 }
 
 .prose :not(pre) > code {
@@ -196,7 +201,7 @@ h3 {
 .search-form {
   display: flex;
   gap: 10px;
-  margin: 56px 0 28px;
+  margin: 0 0 28px 50px;
 }
 
 .search-form input {
@@ -217,27 +222,27 @@ h3 {
 }
 
 .article-year {
-  margin: 28px 0 24px;
-  font-family: Arial, "Noto Sans SC", sans-serif;
+  margin: 24px 0 26px;
   font-size: 16px;
   line-height: 1.75;
 }
 
 .article-year h2 {
   margin: 0 0 8px;
-  font: 400 16px Arial, "Noto Sans SC", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
   text-align: center;
 }
 
 .article-year ul {
   margin: 0;
-  padding-left: 1.45em;
+  padding-left: 1.35em;
   list-style-position: outside;
 }
 
 .article-year li {
   margin: 0;
-  padding-left: 0.15em;
+  padding-left: 0.1em;
 }
 
 .article-date {
@@ -252,9 +257,8 @@ h3 {
 
 .post-header {
   max-width: 840px;
+  margin-left: 50px;
   margin-bottom: 36px;
-  border-top: 1px solid var(--line);
-  padding-top: 52px;
 }
 
 .post-header .eyebrow {
@@ -284,6 +288,11 @@ h3 {
   grid-template-columns: minmax(0, 840px) 180px;
   gap: 48px;
   align-items: start;
+  margin-left: 50px;
+}
+
+.post-shell .prose {
+  margin-left: 0;
 }
 
 .toc {
@@ -320,8 +329,12 @@ h3 {
 }
 
 .timeline-list h2 {
-  margin-bottom: 24px;
+  margin: 0 0 24px;
   font-size: 18px;
+}
+
+.timeline-list p {
+  margin: 0 0 30px;
 }
 
 .link-layout {
@@ -329,6 +342,7 @@ h3 {
   grid-template-columns: minmax(0, 1fr) 220px;
   gap: 72px;
   align-items: start;
+  margin-left: 50px;
 }
 
 .link-groups {
@@ -339,12 +353,23 @@ h3 {
   margin-bottom: 54px;
 }
 
+.link-groups h2 {
+  margin: 0 0 22px;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.link-groups p {
+  margin: 0;
+}
+
 .link-toc {
   position: sticky;
   top: 24px;
   display: grid;
-  gap: 6px;
+  gap: 2px;
   font-size: 14px;
+  line-height: 1.5;
 }
 
 .pdf-viewer {
@@ -412,7 +437,7 @@ h3 {
   }
 
   .site-header {
-    padding: 36px 16px 52px;
+    padding: 36px 16px 58px;
   }
 
   .site-nav {
@@ -425,7 +450,23 @@ h3 {
     padding-right: 16px;
   }
 
+  .page::before,
+  .prose,
+  .post,
+  .article-years,
+  .timeline-list,
+  .paper-list,
+  .archive-list,
+  .tag-cloud,
+  .post-header,
+  .post-shell,
+  .link-layout,
+  .search-form {
+    margin-left: 0;
+  }
+
   .home-quote {
+    width: 100%;
     border-radius: 14px;
     padding: 16px 20px;
   }

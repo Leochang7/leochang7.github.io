@@ -8,11 +8,6 @@ const posts = await getPublishedPosts();
 
 <BaseLayout title="博客" description="文章、笔记和长期知识记录。">
   <main class="page">
-    <section class="prose">
-      <h1>文章</h1>
-      <p>文章、笔记和长期知识记录会在这里按时间排列。</p>
-    </section>
-
     <ArticleList posts={posts} showSearch={true} />
   </main>
 </BaseLayout>
