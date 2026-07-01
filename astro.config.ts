@@ -52,6 +52,11 @@ export default defineConfig({
   },
   vite: {
     plugins: [tailwindcss()],
+    server: {
+      watch: {
+        ignored: ["**/public/notes/.obsidian/**"],
+      },
+    },
   },
   env: {
     schema: {
