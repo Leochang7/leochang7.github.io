@@ -1,0 +1,32 @@
+:root {
+  --vp-c-brand-1: #2f9e68;
+  --vp-c-brand-2: #36ad73;
+  --vp-c-brand-3: #42b983;
+  --vp-font-family-base:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+    "Microsoft YaHei", "Noto Sans CJK SC", Arial, sans-serif;
+  --vp-font-family-mono:
+    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+    "Courier New", monospace;
+}
+
+.VPDoc.has-aside .content-container {
+  max-width: 880px;
+}
+
+.vp-doc {
+  line-height: 1.85;
+}
+
+.vp-doc p,
+.vp-doc li {
+  font-size: 16px;
+}
+
+.vp-doc h2 {
+  margin-top: 40px;
+}
+
+.vp-doc h3 {
+  margin-top: 28px;
+}

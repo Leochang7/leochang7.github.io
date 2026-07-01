@@ -54,7 +54,7 @@ export default defineConfig({
     plugins: [tailwindcss()],
     server: {
       watch: {
-        ignored: ["**/public/notes/.obsidian/**"],
+        ignored: ["**/notes/.obsidian/**"],
       },
     },
   },

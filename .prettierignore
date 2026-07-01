@@ -4,6 +4,7 @@
 # Except these files & folders
 !/src
 !/public
+!/notes
 !/.github
 !tsconfig.json
 !astro.config.ts
@@ -16,5 +17,5 @@
 # Ignore MDX files
 *.mdx
 
-# Vendored browser assets
-public/notes/vendor/
+# Local Obsidian workspace
+notes/.obsidian/
