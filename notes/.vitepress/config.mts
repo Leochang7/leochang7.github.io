@@ -1,4 +1,62 @@
 import { defineConfig } from "vitepress";
+import { defineTeekConfig } from "vitepress-theme-teek/config";
+
+const teekConfig = defineTeekConfig({
+  teekHome: false,
+  vpHome: false,
+  pageStyle: "segment-nav",
+  themeSize: "wide",
+  sidebarTrigger: true,
+  anchorScroll: true,
+  backTop: {
+    enabled: true,
+    content: "progress",
+  },
+  breadcrumb: {
+    enabled: true,
+    showCurrentName: true,
+    separator: "/",
+  },
+  codeBlock: {
+    enabled: true,
+    collapseHeight: 700,
+  },
+  articleAnalyze: {
+    dateFormat: "yyyy-MM-dd",
+    dateUTC: false,
+  },
+  themeEnhance: {
+    enabled: true,
+    position: "top",
+    layoutSwitch: {
+      defaultMode: "original",
+      defaultDocMaxWidth: 88,
+      defaultPageMaxWidth: 94,
+    },
+    themeColor: {
+      defaultColorName: "vp-primary",
+      defaultSpread: false,
+    },
+    spotlight: {
+      defaultValue: false,
+      defaultStyle: "aside",
+    },
+  },
+  footerInfo: {
+    topMessage: "Leo Chang 笔记",
+    theme: {
+      show: true,
+    },
+    copyright: {
+      show: true,
+      createYear: 2026,
+      suffix: "Leo Chang",
+    },
+  },
+  vitePlugins: {
+    sidebar: false,
+  },
+});
 
 export default defineConfig({
   base: "/notes/",
@@ -8,13 +66,18 @@ export default defineConfig({
   outDir: "../dist/notes",
   cleanUrls: true,
   lastUpdated: true,
+  ignoreDeadLinks: teekConfig.ignoreDeadLinks,
+  metaChunk: teekConfig.metaChunk,
+  head: teekConfig.head,
   markdown: {
+    ...teekConfig.markdown,
     math: true,
     image: {
       lazyLoading: true,
     },
   },
   vite: {
+    ...teekConfig.vite,
     server: {
       watch: {
         ignored: ["**/.obsidian/**"],
@@ -22,6 +85,7 @@ export default defineConfig({
     },
   },
   themeConfig: {
+    ...teekConfig.themeConfig,
     siteTitle: "Leo Chang 笔记",
     nav: [
       { text: "总览", link: "/" },

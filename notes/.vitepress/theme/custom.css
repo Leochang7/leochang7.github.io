@@ -2,12 +2,23 @@
   --vp-c-brand-1: #2f9e68;
   --vp-c-brand-2: #36ad73;
   --vp-c-brand-3: #42b983;
+  --tk-color-primary: #2f9e68;
+  --tk-color-primary-light-3: #68bd94;
+  --tk-color-primary-light-5: #97d2b5;
+  --tk-color-primary-light-8: #d9f0e5;
   --vp-font-family-base:
     -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
     "Microsoft YaHei", "Noto Sans CJK SC", Arial, sans-serif;
   --vp-font-family-mono:
     ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
     "Courier New", monospace;
+}
+
+:root.dark {
+  --tk-color-primary: #42d392;
+  --tk-color-primary-light-3: #7ae0b1;
+  --tk-color-primary-light-5: #9ee8c6;
+  --tk-color-primary-light-8: #d9f8e9;
 }
 
 .VPDoc.has-aside .content-container {
