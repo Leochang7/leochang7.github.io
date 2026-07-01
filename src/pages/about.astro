@@ -1,12 +1,36 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
+import { getEntry, render } from "astro:content";
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/Header.astro";
+import Breadcrumb from "@/components/Breadcrumb.astro";
+import Main from "@/components/Main.astro";
+import Footer from "@/components/Footer.astro";
+import config from "@/config";
+
+const about = await getEntry("pages", "about");
+
+if (!about) {
+  throw new Error(
+    "Missing content entry: `about.md` or `about.mdx` in `src/content/pages/`"
+  );
+}
+
+const { Content } = await render(about);
 ---
 
-<BaseLayout title="关于" description="关于这个个人博客。">
-  <main class="page">
-    <section class="prose">
-      <h1>关于</h1>
-      <p>这里将用于介绍站点作者、研究兴趣、项目经历和联系方式。</p>
-    </section>
-  </main>
-</BaseLayout>
+<Layout
+  title={`${about.data.title} | ${config.site.title}`}
+  description={about.data.description}
+  ogImage={about.data.ogImage}
+  canonicalURL={about.data.canonicalURL}
+>
+  <Header />
+
+  <Breadcrumb />
+
+  <Main pageTitle={about.data.title} class="app-prose">
+    <Content />
+  </Main>
+
+  <Footer />
+</Layout>

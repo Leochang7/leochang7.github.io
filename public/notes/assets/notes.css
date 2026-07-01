@@ -1,0 +1,15 @@
+.markdown-section,
+:root {
+  --theme-color: #42b983;
+}
+
+.markdown-section {
+  max-width: 1000px;
+}
+
+.markdown-section pre,
+.markdown-section code {
+  font-family:
+    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+    "Courier New", monospace;
+}
