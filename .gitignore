@@ -35,3 +35,6 @@ compose.override.yaml
 # local AI workspace
 docs/
 AGENTS.MD
+
+# local Obsidian workspace
+public/notes/.obsidian/
